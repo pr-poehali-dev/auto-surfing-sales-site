@@ -1,0 +1,36 @@
+{
+  "tests": [
+    {
+      "name": "Create withdrawal request",
+      "method": "POST",
+      "path": "/",
+      "headers": {
+        "X-User-Id": "1"
+      },
+      "body": {
+        "amount": 100,
+        "payment_method": "card",
+        "payment_details": "1234-5678-9012-3456"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "request_id": "number"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get withdrawal requests",
+      "method": "GET",
+      "path": "/",
+      "headers": {
+        "X-User-Id": "1"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "requests": []
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

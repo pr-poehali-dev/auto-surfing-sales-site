@@ -1,0 +1,19 @@
+{
+  "tests": [
+    {
+      "name": "Get referral stats",
+      "method": "GET",
+      "path": "/",
+      "headers": {
+        "X-User-Id": "1"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "user": {},
+        "total_referrals": "number",
+        "levels": {}
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

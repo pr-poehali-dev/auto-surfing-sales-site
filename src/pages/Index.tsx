@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -7,6 +8,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
+  const navigate = useNavigate();
   const [onlineCount, setOnlineCount] = useState(247);
   const [buyersCount, setBuyersCount] = useState(1342);
   const [showExitPopup, setShowExitPopup] = useState(false);
@@ -50,6 +52,15 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
       <div className="fixed top-4 right-4 z-50 flex gap-3">
+        <Button onClick={() => navigate('/register')} variant="default">
+          Регистрация
+        </Button>
+        <Button onClick={() => navigate('/login')} variant="outline" className="text-white border-white">
+          Вход
+        </Button>
+      </div>
+      
+      <div className="fixed top-4 left-4 z-50 flex gap-3">
         <Badge className="bg-secondary text-white px-4 py-2 text-sm font-body animate-pulse">
           <Icon name="Users" size={16} className="mr-2" />
           Онлайн: {onlineCount}
