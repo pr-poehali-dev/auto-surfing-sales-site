@@ -101,7 +101,7 @@ const Index = () => {
 
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           {[
-            { icon: 'TrendingUp', title: '1500-3000₽/день', desc: 'Пассивный доход' },
+            { icon: 'TrendingUp', title: '1500-3000₽/день', desc: 'Все зависит от вашего компьютера' },
             { icon: 'Clock', title: '24/7 работа', desc: 'Без вашего участия' },
             { icon: 'Shield', title: 'Безопасно', desc: 'Защита аккаунта' }
           ].map((item, idx) => (
